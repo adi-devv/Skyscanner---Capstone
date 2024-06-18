@@ -37,11 +37,12 @@ for v in sheet_data:
     # ------------------------------------------ PRICE PART ------------------------------------------ #
 
     flights = searchF.check_flights(
-        "BHO",
+        "DEL",
         v["iataCode"],
         from_time=datetime.now() + timedelta(days=1),
-        to_time=datetime.now() + timedelta(days=(6 * 30))
+        to_time=datetime.now() + timedelta(days=(6))
     )
     cheapest_flight = FlightData.find_cheapest_flight(flights)
     print(f"{v['city']}: INR {cheapest_flight.price}")
     time.sleep(2)
+    break

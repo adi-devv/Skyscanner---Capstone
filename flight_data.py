@@ -44,6 +44,7 @@ class FlightData:
 
         for flight in data["data"]:
             price = float(flight["price"]["grandTotal"])
+            print(price)
             if price < lowest_price:
                 lowest_price = price
                 origin = flight["itineraries"][0]["segments"][0]["departure"]["iataCode"]
