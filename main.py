@@ -7,7 +7,7 @@ from flight_data import FlightData
 # F = FlightData(token="duffel_test_v7qyS_Q9D22S_cUROeg71cOoUd88-xzmMZvmeNFBp-T")
 searchF = FlightSearch()
 
-sheet_ep = "https://api.sheety.co/40f385df6ca5661d440ba2fb4daca687/flightDeals/prices"
+sheet_ep = "https://api.sheety.co/40/flightDeals/prices"
 h2 = {
     "Authorization": "Bearer heheeha"
 }
