@@ -11,8 +11,8 @@ tok_ep = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
 class FlightSearch:
     def __init__(self):
-        self._api_key = "MyyVlzGP8eK58H7O9SMadOsmDaLViyJ7"
-        self._api_secret = "SleOGHeP4jlPfBlX"
+        self._api_key = "my"
+        self._api_secret = "sl"
         self._token = self._get_new_token()
 
     def _get_new_token(self):
