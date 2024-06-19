@@ -4,7 +4,7 @@ import time
 from searchF import FlightSearch
 from flight_data import FlightData
 
-# F = FlightData(token="duffel_test_v7qyS_Q9D22S_cUROeg71cOoUd88-xzmMZvmeNFBp-T")
+# F = FlightData(token="duffel_test_v")
 searchF = FlightSearch()
 
 sheet_ep = "https://api.sheety.co/40/flightDeals/prices"
