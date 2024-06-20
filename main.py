@@ -49,7 +49,7 @@ for v in sheet_data:
     cheapest_flight = FlightData.find_cheapest_flight(flights)
     print(f"{v['city']}: INR {cheapest_flight.price} : {cheapest_flight.out_date} : {cheapest_flight.return_date}")
     time.sleep(2)
-    
+
     resp = requests.put(
         url=f"{sheet_ep}/{v['id']}",
         json={
