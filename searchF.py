@@ -1,18 +1,16 @@
 import requests
-from datetime import datetime, timedelta
-# import os
-# from dotenv import load_dotenv
-from flight_data import FlightData
+import os
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
 flight_ep = "https://test.api.amadeus.com/v2/shopping/flight-offers"
 tok_ep = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
 class FlightSearch:
     def __init__(self):
-        self._api_key = "MyyVlzGP8eK58H7O9SMadOsmDaLViyJ7"
-        self._api_secret = "SleOGHeP4jlPfBlX"
+        self._api_key = os.environ["AMADEUS_API_KEY"]
+        self._api_secret = os.environ["AMADEUS_SECRET"]
         self._token = self._get_new_token()
 
     def _get_new_token(self):
@@ -37,6 +35,7 @@ class FlightSearch:
             "currencyCode": "INR",
             "max": "10",
         }
+
         response = requests.get(url=flight_ep, headers=headers, params=query)
         if response.status_code != 200:
             return None
