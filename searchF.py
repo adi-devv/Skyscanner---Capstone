@@ -7,6 +7,7 @@ load_dotenv()
 flight_ep = "https://test.api.amadeus.com/v2/shopping/flight-offers"
 tok_ep = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
+
 class FlightSearch:
     def __init__(self):
         self._api_key = os.environ["AMADEUS_API_KEY"]
@@ -39,5 +40,9 @@ class FlightSearch:
         response = requests.get(url=flight_ep, headers=headers, params=query)
         if response.status_code != 200:
             return None
+        if response.json() == None or not response.json()['data']:
+            query['nonStop'] = "false"
+            response = requests.get(url=flight_ep, headers=headers, params=query)
+            if response.status_code != 200:
+                return None
         return response.json()
-
